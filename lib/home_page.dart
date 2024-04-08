@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:game/gamer_logic.dart';
 
@@ -40,9 +42,10 @@ class GameBoardState extends State<GameBoard> {
             return GestureDetector(
               onTap: () {
                 if (gameLogic.isValidMove(row, col)) {
-                  setState(() {
-                    gameLogic.makeMove(row, col);
-                  });
+                  // setState(() {
+                  //   gameLogic.makeMove(row, col);
+                  // });
+                  log(gameLogic.board.toString());
                   if (gameLogic.isGameOver()) {
                     showDialog(
                       context: context,
